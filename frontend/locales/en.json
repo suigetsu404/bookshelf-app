@@ -15,7 +15,7 @@
     "title_label": "Title",
     "author_label": "Author",
     "status_label": "Status",
-    "status_toread": "To Read",
+    "status_toread": "To be read",
     "status_reading": "Reading",
     "status_read": "Read",
     "add_button": "Add Book",
