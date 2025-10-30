@@ -263,6 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         card.querySelector('.rating-display').textContent = book.rating !== null ? `${book.rating}/5` : '—';
                     }
                     card.dataset.book = JSON.stringify(book);
+                    await fetchAndDisplayLeaderboard();
                 } else {
                     alert('Failed to update book');
                 }
