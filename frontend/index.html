@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="page_title">Virtual Bookshelf</title>
+    <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="language-switcher">
+            <button id="lang-en">
+                <img src="images/united-kingdom.png" alt="EN" class="flag-icon">
+            </button>
+            <button id="lang-pl">
+                <img src="images/poland.png" alt="PL" class="flag-icon">
+            </button>
+        </div>
+        <div id="user-info" style="display: none;">
+            <p data-i18n="welcome_message"></p>
+            <button id="logout-button" data-i18n="logout_button">Logout</button>
+        </div>
+    </nav>
+    <hr>
+    <main>
+        <div id="logged-out-view">
+            <div>
+                <h1 data-i18n="main_header">Welcome to the Virtual Bookshelf</h1>
+                <p data-i18n="main_subheader">Your personal space to manage and explore your book collection.</p>
+                <p data-i18n="to_login_prompt" id="link"></p>
+                <p data-i18n="to_register_prompt" id="link"></p>
+            </div>
+            <div>
+                <h2 data-i18n="features_header">Features</h2>
+                <ul>
+                    <li data-i18n="feature_1">Add and organize your books</li>
+                    <li data-i18n="feature_2">Track your reading progress</li>
+                    <li data-i18n="feature_3">Check leaderboard to see how you compare to others</li>
+                </ul>
+            </div>
+        </div>
+        <div id="logged-in-view">
+            <div id="add-book-section" style="display: none;">
+                <h2 data-i18n="add_book_header">Add New Book</h2>
+                <form id="add-book-form">
+                    <label for="title-input" data-i18n="title_label">Title:</label>
+                    <input id="title-input" type="text" name="title" required><br><br>
+                    <label for="author-input" data-i18n="author_label">Author:</label>
+                    <input id="author-input" type="text" name="author" required><br><br>
+                    <label for="status-select" data-i18n="status_label">Status:</label>
+                    <select id="status-select" name="status" required>
+                    <option value="do przeczytania" data-i18n="status_toread">To Read</option>
+                    <option value="w trakcie czytania" data-i18n="status_reading">Reading</option>
+                    <option value="przeczytane" data-i18n="status_read">Read</option>
+                    </select><br><br>
+                    <label for="rating-input" data-i18n="rating_label">Rating (1-5):</label>
+                    <input id="rating-input" type="number" name="rating" min="1" max="5"><br><br>
+                    <label for="review-input" data-i18n="review_label">Review:</label>
+                    <textarea id="review-input" name="review"></textarea><br><br>
+                    <button id="add-book-button" type="submit" data-i18n="add_button">Add Book</button> </form>
+            </div>
+            <div id="bookshelf-section" style="display: none;">
+                <h2 data-i18n="bookshelf_header">Your Bookshelf</h2> 
+                    <div id="bookshelf-list">
+                    </div>
+            </div>
+        </div>
+        <div id="leaderboard">
+            <h2 data-i18n="leaderboard_header">Leaderboard</h2>
+            <div id="leaderboard-list">
+            </div>
+        </div>
+        </main>
+    <script src="app.js" defer></script>
+    <script src="i18n.js"></script>
+</body>
+</html>

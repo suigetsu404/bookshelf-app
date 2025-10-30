@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="page_title">Virtual Bookshelf</title>
+    <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+    <body class="auth-page-body">
+        <div class="language-switcher">
+            <button id="lang-en">
+                <img src="images/united-kingdom.png" alt="EN" class="flag-icon"> 
+            </button>
+            <button id="lang-pl">
+                <img src="images/poland.png" alt="PL" class="flag-icon">
+            </button>
+        </div>
+        <hr>
+        <form id="login-form" action="/login" method="post" class="auth-form">
+            <h1 data-i18n="login_header">Login</h1>
+            <label id="login-username-label" for="username" data-i18n="username">Username:</label>
+            <input id="login-username-input" type="text" name="username" required data-i18n="[placeholder]username_placeholder"><br><br>
+            <label id="login-password-label" for="password" data-i18n="password">Password:</label>
+            <input id="login-password-input" type="password" name="password" required data-i18n="[placeholder]password_placeholder"><br><br>
+            <button id="login-password-button" type="submit" data-i18n="login_button">Login</button>
+        </form>
+        <p data-i18n="to_register_prompt">Don't have an account?</p>
+        <script src="app.js" defer></script>
+        <script src="i18n.js"></script>
+    </body>
+</html>

@@ -1,0 +1,160 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: hsl(36, 92%, 85%);
+    color: hsl(210, 10%, 23%)
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: hsl(39, 100%, 57%);
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px hsla(0, 0%, 0%, 0.1);
+    color: hsl(0, 0%, 100%);
+}
+nav a {
+    color: hsl(0, 0%, 100%);
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+nav div p{
+    display: inline;
+    margin-right: 10px;
+}
+#logout-button {
+    padding: 10px;
+    background-color: hsl(39, 100%, 50%);
+    border: none;
+    box-shadow: 0 2px 4px hsla(0, 0%, 0%, 0.1);
+    border-radius: 10px;
+    color: hsl(0, 0%, 100%);
+    font-weight: bold;
+    cursor: pointer;
+}
+#logout-button:hover {
+    background-color: hsl(39, 100%, 40%);
+}
+.language-switcher button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+.auth-page-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+.auth-form {
+    background-color: hsl(0, 0%, 100%);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px hsla(0, 0%, 0%, 0.1);
+    width: 300px;
+}
+.auth-form h1{
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+.auth-form input[type="text"],
+.auth-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid hsl(210, 36%, 96%);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.auth-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: hsl(39, 100%, 57%);
+    border: none;
+    border-radius: 4px;
+    color: hsl(0, 0%, 100%);
+    font-weight: bold;
+    cursor: pointer;
+}
+.auth-form button:hover {
+    background-color: hsl(39, 100%, 47%);
+}
+.auth-page-body p {
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+.auth-page-body p a{
+    text-decoration: none;
+    color: hsl(211, 100%, 40%);
+}
+.auth-page-body p a:hover{
+    text-decoration: underline;
+}
+.flag-icon{
+    width: 34px;
+    height: 30px;
+    display: block;
+}
+main{
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 8px;
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: 0 4px 8px hsla(0, 0%, 0%, 0.05)
+}
+#logged-out-view > div,
+#add-book-section,
+#bookshelf-section,
+#leaderboard {
+    margin-bottom: 30px;
+}
+h1{
+    font-size: 2rem;
+    color: hsl(210, 11%, 15%);
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+h2{
+    font-size: 1.5rem;
+    color: hsl(210, 9%, 31%);
+    border-bottom: 1px solid hsl(210, 14%, 89%);
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+ul{
+    padding-left: 20px;
+    margin-bottom: 1rem;
+}
+li{
+    margin-bottom: 0.5rem;
+}
+p{
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+hr{
+    border: none;
+    height: 1px;
+    background-color: hsl(0, 0%, 88%);
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+#logged-out-view p a{
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+#logged-out-view p a{
+    text-decoration: none;
+    color: hsl(211, 100%, 40%);
+}
+#logged-out-view p a:hover{
+    text-decoration: underline;
+}
