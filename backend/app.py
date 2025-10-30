@@ -21,13 +21,17 @@ if not GOOGLE_BOOKS_API_KEY:
     logging.error("GOOGLE_BOOKS_API_KEY not found in environment variables.")
     raise ValueError("No GOOGLE_BOOKS_API_KEY set for application. Set it in the .env file.")
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(BASE_DIR, 'data')
+DB_PATH = os.path.join(DATA_DIR, 'app.db')
+os.makedirs(DATA_DIR, exist_ok=True)
 def db_creation():
-    connection = sqlite3.connect(r"C:\Users\admin\Desktop\VSCProjects\BookshelfApp\backend\data\app.db")
+    connection = sqlite3.connect(DB_PATH)
     cursor = connection.cursor()
     cursor.execute('''CREATE TABLE IF NOT EXISTS users
                         (id INTEGER PRIMARY KEY AUTOINCREMENT,
                          username TEXT NOT NULL UNIQUE,
-                        password_hash TEXT NOT NULL)''')
+                         password_hash TEXT NOT NULL)''')
     cursor.execute('''CREATE TABLE IF NOT EXISTS books
                         (id INTEGER PRIMARY KEY AUTOINCREMENT,
                          title TEXT NOT NULL,
@@ -40,10 +44,9 @@ def db_creation():
                          FOREIGN KEY(user_id) REFERENCES users(id))''')
     connection.commit()
     connection.close()
-    print("Successfully connected to app.db.")
-
+    print(f"Successfully connected to db at {DB_PATH}")
 def get_db_connection():
-    connection = sqlite3.connect(r"C:\Users\admin\Desktop\VSCProjects\BookshelfApp\backend\data\app.db")
+    connection = sqlite3.connect(DB_PATH)
     connection.row_factory = sqlite3.Row
     return connection
 
