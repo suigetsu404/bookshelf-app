@@ -38,6 +38,7 @@
     "book_one": "książka",
     "book_few": "książki",
     "book_many": "książek",
-    "book_other": "książki"
+    "book_other": "książki",
+    "delete_button": "Usuń"
   }
 }

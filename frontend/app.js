@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 ${ratingOptions}
                             </select>
                         </label>
-                        <button class="delete-btn">Delete</button>
+                        <button class="delete-btn" data-i18n="delete_button">Delete</button>
                     </div>
                 </div>
             </div>
@@ -344,7 +344,11 @@ document.addEventListener('DOMContentLoaded', () => {
             leaderboardList.innerHTML = '<p>Error loading leaderboard</p>';
         }
     }
-
+    if (window.i18next){
+        window.i18next.on('languageChanged', () => {
+            fetchAndDisplayLeaderboard();
+        });
+    }
     if (document.body.contains(document.getElementById('bookshelf-list')) || document.body.contains(document.getElementById('add-book-form')) || document.body.contains(document.getElementById('logout-button'))) {
         checkSessionAndInit();
     }
