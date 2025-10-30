@@ -11,10 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const logoutButton = document.getElementById('logout-button');
     const leaderboardList = document.getElementById('leaderboard-list');
 
-    const BACKEND_ORIGIN = 'http://127.0.0.1:5000';
+    // const BACKEND_ORIGIN = 'http://127.0.0.1:5000';
 
     async function apiFetch(path, opts = {}) {
-        const url = path.startsWith('http') ? path : BACKEND_ORIGIN + path;
+        // const url = path.startsWith('http') ? path : BACKEND_ORIGIN + path;
+        const url = path;
         return fetch(url, { credentials: 'include', headers: { 'Content-Type': 'application/json' }, ...opts });
     }
 
